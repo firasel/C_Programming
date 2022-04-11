@@ -51,6 +51,7 @@ int main(){
     int price1;
 
     price1 = 20;
+
     printf("Price = %d\n",price1);
 
     price1 += 30;
