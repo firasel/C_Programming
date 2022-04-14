@@ -66,8 +66,9 @@
 //    int height;
 //    printf("Enter your height in inches: ");
 //    scanf("%d",&height);
-//    double height_calc = (double)height / 12;
-//    printf("Your height is %lf feet",height_calc);
+//    int feet = height / 12;
+//    int inch = height % 12;
+//    printf("Your height is %d feet and %d inch.",feet,inch);
 //
 //    return 0;
 //}
