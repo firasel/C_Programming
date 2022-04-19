@@ -1,10 +1,9 @@
 #include<stdio.h>
 int main(){
-    int a = 30, b = 20;
-    int maxNum = a > b ? a : b;
+    int a,b,c;
+    scanf("%d %d %d",&a,&b,&c);
 
-    printf("%d",maxNum);
-
+    (a-b)>c?printf("0\n"):printf("%d\n",c-(a-b));
 
     return 0;
 }
