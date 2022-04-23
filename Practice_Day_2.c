@@ -192,15 +192,15 @@
 //}
 
 
-////Problem 11
-//#include<stdio.h>
-//int main() {
-//    int x,y;
-//    scanf("%d %d",&x,&y);
-//
-//    for(int i = x; i <= y; i++){
-//       i%x==0 && y%i==0 && printf("%d ",i);
-//    }
-//
-//    return 0;
-//}
+//Problem 11
+#include<stdio.h>
+int main() {
+    int x,y;
+    scanf("%d %d",&x,&y);
+
+    for(int i = 1; i <= y; i++){
+       i%x==0 && y%i==0 && printf("%d ",i);
+    }
+
+    return 0;
+}
