@@ -1,28 +1,32 @@
-#include<stdio.h>
-#include<stdbool.h>
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
 
-int main(){
-    srand(time(0));
-    int num = rand()%100 + 1;
+//                            4 4 4 4 4 4 4
+//                            4 3 3 3 3 3 4
+//                            4 3 2 2 2 3 4
+//                            4 3 2 1 2 3 4
+//                            4 3 2 2 2 3 4
+//                            4 3 3 3 3 3 4
+//                            4 4 4 4 4 4 4
 
-    int number_of_limit = 10;
+int main()
+{
 
-    while (number_of_limit>0) {
-        int inputNum;
-        scanf("%d",&inputNum);
-
-        if (inputNum == num) {
-            printf("You are right\n");
-            break;
-        } else if (inputNum > num) {
-            printf("Guess smaller\n");
-        } else {
-            printf("Guess larger\n");
+    int n;
+    scanf("%d", &n);
+  	// Complete the code to print the pattern.
+  	int length = (n*2) -1;
+  	for (int i=0; i < length; i++){
+        for (int j=0; j < length; j++){
+            int min = i < j ? i : j;
+            min = min < length-i ? min : length-i-1;
+            min = min < length-j-1 ? min : length-j-1;
+            printf("%d ", n-min);
         }
-        number_of_limit--;
-    }
-
-    number_of_limit == 0 && printf("You failed");
+        printf("\n");
+  	}
 
     return 0;
 }
