@@ -1,12 +1,28 @@
 #include <stdio.h>
+1 1 1 4
+2 4 2 2
 
 int main() {
-    int n;
-    scanf("%d", &n);
-    for(int i=1; i<=n; i++){
-        int grade, lastNum;
-        scanf("%d",&grade);
-        grade < 38 ? printf("%d\n",grade) : grade % 5 == 3 ? printf("%d\n",grade+2) : grade % 5 == 4 ? printf("%d\n",grade+1) : printf("%d\n",grade);
+    int arr[4];
+    for(int i=0; i<4; i++) {
+        scanf("%d",&arr[i]);
     }
+    for(int i=0; i<4; i++) {
+        for(int j=0; j<3; j++) {
+
+        }
+    }
+
+    if(a==b && a==c && a==d) {
+        printf("3\n");
+    } else if(a==b || c==d || a==c || a==d) {
+        printf("2\n");
+    } else if(a==b || a==c || a==d || b==c || b==d || c==d) {
+        printf("1\n");
+    }else{
+        printf("0\n");
+    }
+
+
     return 0;
 }
