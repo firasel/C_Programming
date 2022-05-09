@@ -3,8 +3,10 @@
 
 int main(){
 
-    char s[10] = "ava";
-    printf("%d\n",strlen(s));
+    char a[100];
+    scanf("%s", a);
+    printf("%s\n", a);
+
 
     return 0;
 }
