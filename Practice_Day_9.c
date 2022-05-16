@@ -1,12 +1,18 @@
 #include<stdio.h>
-
 int main(){
-      int fib[5];
-      fib[0] = fib[1] = 1;
-      for (int i=2; i<5; i++){
-        fib[i] = fib[i-1]+fib[i-2];
-      }
-      printf("%d", fib[4]);
+    int n,sum = 0;
+    scanf("%d",&n);
 
+    for(int i=0; i<n; i++){
+        int num[n];
+        for(int k=0; k<n; k++){
+            scanf("%d",&num[k]);
+            if((n-1)/2 == i) sum+=num[k];
+            else if((n-1)/2 == k) sum+=num[k];
+            else if((i%2 == 0) && (k%2 == 0)) sum+=num[k];
+            else if((i%2 != 0) && (k%2 != 0)) sum+=num[k];
+        }
+    }
+    printf("%d\n",sum);
     return 0;
 }
