@@ -1,14 +1,18 @@
-#include<stdio.h>
+#include <stdio.h>
 
-void makeNArray(int n, int *sum){
-    for(int i=1; i<=n; i++)
-        *sum += (i*i);
-}
+int main () {
+    int n,*ptr;
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+    int arr[n];
 
-int main(){
-    int n = 10,sum = 0;
-    makeNArray(n,&sum);
-    printf("%d\n",sum);
+    for(int i=0; i<n;i++)
+        scanf("%d", &arr[i]);
+
+    ptr = &arr[n-1];
+
+    for(int i=0; i<n; i++)
+        printf("%d ", *ptr--);
 
     return 0;
 }
