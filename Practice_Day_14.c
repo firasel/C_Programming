@@ -10,7 +10,7 @@ void swap(int *a, int *b){
 bool is_sorted(int n, int a[]){
     bool check = false;
     for(int i=0; i<n-1; i++){
-        if(a[i] < a[i+1]) check = true;
+        if(a[i] > a[i+1]) check = true;
         else{
             check = false;
             break;
@@ -22,7 +22,7 @@ bool is_sorted(int n, int a[]){
 void sort(int n, int a[]) {
 	for (int steps=0; steps<n; steps++) {
     	for (int i=0; i+1<n; i++) {
-        	if (a[i] > a[i+1]) {
+        	if (a[i] < a[i+1]) {
             	swap(&a[i], &a[i+1]);
         	}
         }
