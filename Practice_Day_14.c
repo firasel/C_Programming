@@ -1,29 +1,31 @@
 #include<stdio.h>
-#include<stdlib.h>
 
-int * makeReverse(int n, const int a[]){
-    int *temp = (int*)malloc(n * sizeof(int));
-
-    for(int i=0; i<n; i++)
-        temp[i] = a[n-i-1];
-
-    return temp;
+int findNegatives(int n, int in[], int out[]){
+    int count = 0;
+    for(int i=0; i<n; i++){
+        if(in[i] < 0){
+            out[count] = in[i];
+            count++;
+        }
+    }
+    return count;
 }
 
 int main() {
     int n;
     scanf("%d",&n);
 
-    int a[n];
+    int a[n],out[n];
     for(int i=0; i<n; i++)
         scanf("%d",&a[i]);
 
-    int *b = makeReverse(n,a);
+    int totalFound = findNegatives(n,a,out);
+    printf("Total negative number is: %d\n",totalFound);
 
-    for(int i=0; i<n; i++)
-        printf("%d ",b[i]);
+    for(int i=0; i<totalFound; i++){
+        printf("%d ",out[i]);
+    }
     printf("\n");
-
 
     return 0;
 }
