@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdbool.h>
 
 void swap(int *a, int *b){
     int temp = *a;
@@ -6,16 +7,26 @@ void swap(int *a, int *b){
     *b = temp;
 }
 
+bool is_sorted(int n, int a[]){
+    bool check = false;
+    for(int i=0; i<n-1; i++){
+        if(a[i] < a[i+1]) check = true;
+        else{
+            check = false;
+            break;
+        }
+    }
+    return check;
+}
+
 void sort(int n, int a[]) {
 	for (int steps=0; steps<n; steps++) {
-    	int minelement = a[steps], pos = steps;
-    	for (int i=steps; i<n; i++) {
-        	if (a[i] < minelement) {
-            	minelement = a[i];
-            	pos = i;
+    	for (int i=0; i+1<n; i++) {
+        	if (a[i] > a[i+1]) {
+            	swap(&a[i], &a[i+1]);
         	}
-    	}
-    	swap(&a[steps], &a[pos]);
+        }
+		if (is_sorted(n, a))	break;
 	}
 }
 
