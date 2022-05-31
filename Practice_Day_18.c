@@ -1,20 +1,25 @@
 #include<stdio.h>
 
-struct Result {
-    int vagfol;
-    int vagshesh;
+struct ArrayHolder {
+    int array[100];
 };
 
-struct Result divide(int x, int y){
-    return (struct Result) {x/y, x%y};
-};
+struct ArrayHolder makeNarray(int n){
+    struct ArrayHolder ans;
+    for(int i=0; i<n; i++){
+        ans.array[i] = i+1;
+    }
+    return ans;
+}
 
 int main(){
-    int a = 10, b = 3;
+    int n = 20;
 
-    int vagfol, vagshesh;
-    struct Result result = divide(a, b);
-    printf("%d %d\n", result.vagfol, result.vagshesh);
+    struct ArrayHolder ans = makeNarray(n);
+
+    for(int i=0; i<n; i++){
+        printf("%d ",ans.array[i]);
+    }
 
     return 0;
 }
