@@ -1,25 +1,59 @@
 #include<stdio.h>
 
-struct ArrayHolder {
-    int array[100];
+struct Fraction{
+    int num;
+    int denom;
 };
 
-struct ArrayHolder makeNarray(int n){
-    struct ArrayHolder ans;
-    for(int i=0; i<n; i++){
-        ans.array[i] = i+1;
+int gcd(int a, int b){
+    while(b>0){
+        int temp = a%b;
+        a = b;
+        b = temp;
     }
-    return ans;
+    return a;
 }
 
+struct Fraction reduce(struct Fraction f){
+    int g = gcd(f.num, f.denom);
+    f.num /= g;
+    f.denom /= g;
+    return f;
+}
+
+struct Fraction inputFraction() {
+    struct Fraction f;
+    scanf("%d %d", &f.num, &f.denom);
+    return f;
+}
+
+void print(struct Fraction f){
+    printf("%d/%d", f.num, f.denom);
+}
+
+struct Fraction add (struct Fraction a, struct Fraction b){
+     struct Fraction ans;
+     ans.num = a.num*b.denom + b.num*a.denom;
+     ans.denom = a.denom*b.denom;
+     return ans;
+};
+
 int main(){
-    int n = 20;
+    struct Fraction a, b;
+    a = inputFraction();
+    b = inputFraction();
 
-    struct ArrayHolder ans = makeNarray(n);
+    a = reduce(a);
+    b = reduce(b);
 
-    for(int i=0; i<n; i++){
-        printf("%d ",ans.array[i]);
-    }
+    print(a);
+    printf(" + ");
+    print(b);
+    printf(" = ");
 
+    struct Fraction sum = add(a, b);
+    sum = reduce(sum);
+    print(sum);
+    printf("\n");
     return 0;
 }
