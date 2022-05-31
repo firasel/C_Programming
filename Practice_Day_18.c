@@ -6,10 +6,7 @@ struct Result {
 };
 
 struct Result divide(int x, int y){
-    struct Result result;
-    result.vagfol = x/y;
-    result.vagshesh = x%y;
-    return result;
+    return (struct Result) {x/y, x%y};
 };
 
 int main(){
