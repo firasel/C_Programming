@@ -1,27 +1,25 @@
-#include<stdio.h>
+#include <stdio.h>
 
-struct Time{
-    int hour;
-    int minute;
+struct Fraction {
+    int num;
+    int denom;
 };
 
-struct Interval{
-    struct Time start;
-    struct Time end;
+void print(struct Fraction f){
+    printf("%d/%d", f.num,f.denom);
+}
+
+struct Fraction inverse(struct Fraction a){
+    struct Fraction ans;
+    ans.num = a.denom;
+    ans.denom = a.num;
+    return ans;
 };
 
-struct Time getTime(){
-    struct Time time;
-    scanf("%d %d", &time.hour, &time.minute);
-    return time;
-};
-
-int main(){
-    struct Interval interval;
-    interval.start = getTime();
-    interval.end = getTime();
-
-    printf("Start time is %d:%d and End time is %d:%d\n", interval.start.hour, interval.start.minute, interval.end.hour, interval.end.minute);
-
-    return 0;
+int main () {
+    struct Fraction a;
+    scanf("%d %d", &a.num,&a.denom);
+    print(a);
+    printf(" = ");
+    print(inverse(a));
 }

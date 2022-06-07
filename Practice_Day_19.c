@@ -52,9 +52,10 @@ unsigned char rightRotate(unsigned char mask, int k){
 }
 
 int main(){
-//    int x = 54;
-//    printf("%d = %s\n", x, toBinary(x,8).str);
-//
+    int x = 54;
+    printf("%d = %s\n", x, toBinary(x,8).str);
+    printf("%d = %s\n", x, toBinary(flipBit(x,6),8).str);
+
 //    for(int i=0; i<8; i++){
 //        printf("%d th bit: %d\n", i, getBit(x, i));
 //        printf("Clear: %s\n", toBinary(clearBit(x, i), 8).str);
@@ -62,14 +63,14 @@ int main(){
 //        printf("Flip: %s\n", toBinary(flipBit(x, i), 8).str);
 //    }
 
-    unsigned char x= 54;
-    printf("%d = %s\n", x, toBinary(x,8).str);
-
-    for(int i=0; i<8; i++){
-        unsigned char R = rightRotate(x, i);
-        printf("Rotate %d = %s\n", i, toBinary(R,8).str);
-
-    }
+//    unsigned char x= 54;
+//    printf("%d = %s\n", x, toBinary(x,8).str);
+//
+//    for(int i=0; i<8; i++){
+//        unsigned char R = rightRotate(x, i);
+//        printf("Rotate %d = %s\n", i, toBinary(R,8).str);
+//
+//    }
 
     return 0;
 }
