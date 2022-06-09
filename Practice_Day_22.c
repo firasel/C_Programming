@@ -1,26 +1,21 @@
 #include<stdio.h>
-#include<string.h>
 
 int main(){
-    int n, total=0;
+    int n, a=0,b=0;
     scanf("%d",&n);
+    int arr[n];
+
+    for(int i=0; i<n; i++)
+        scanf("%d", &arr[i]);
 
     for(int i=0; i<n; i++){
-        char str[13];
-        scanf("%s",&str);
-
-        if(strcmp(str, "Tetrahedron") == 0)
-            total += 4;
-        else if(strcmp(str, "Cube") == 0)
-            total += 6;
-        else if(strcmp(str, "Octahedron") == 0)
-            total += 8;
-        else if(strcmp(str, "Dodecahedron") == 0)
-            total += 12;
-        else if(strcmp(str, "Icosahedron") == 0)
-            total += 20;
+        int maxIndex = 0;
+        for(int j=0; j<n; j++)
+            arr[maxIndex] < arr[j] && (maxIndex = j);
+        i%2 == 0 ? (a+=arr[maxIndex]) : (b+=arr[maxIndex]);
+        arr[maxIndex] = 0;
     }
 
-    printf("%d\n",total);
+    printf("%d %d\n",a,b);
     return 0;
 }
