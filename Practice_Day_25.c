@@ -1,16 +1,14 @@
 #include<stdio.h>
 
-void swap(int *a,int *b){
-    int temp = *a;
-    *a = *b;
-    *b = temp;
+void ultra_sum(int a,int b,int *sum, int *multiply){
+    *sum = a+b;
+    *multiply = a*b;
 }
 
 int main(){
-    int a=5,b=10;
-    printf("A = %d, B = %d\n",a,b);
-    swap(&a,&b);
-    printf("A = %d, B = %d\n",a,b);
+    int a=5,b=10,sum,multiply;
+    ultra_sum(a,b,&sum,&multiply);
+    printf("Sum is = %d, Multiply is = %d\n", sum, multiply);
 
     return 0;
 }
