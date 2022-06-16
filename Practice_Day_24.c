@@ -12,13 +12,20 @@ int main(){
         int r;
         scanf("%s", food);
         scanf(" %d", &r);
-        if(r > rMax){
+        if(i==0){
             rMax = r;
-            strcpy(foodA, food);
-        }
-        if(r < rMin){
             rMin = r;
+            strcpy(foodA, food);
             strcpy(foodB, food);
+        }else{
+            if(r > rMax){
+                rMax = r;
+                strcpy(foodA, food);
+            }
+            if(r < rMin){
+                rMin = r;
+                strcpy(foodB, food);
+            }
         }
     }
     printf("%s %s\n", foodB, foodA);
