@@ -1,16 +1,16 @@
 #include<stdio.h>
 
-void take_input(int arr[],int n){
-    for(int i=0; i<n; i++)
-        scanf("%d",&arr[i]);
+void swap(int *a,int *b){
+    int temp = *a;
+    *a = *b;
+    *b = temp;
 }
 
 int main(){
-    int arr[5];
-    take_input(arr,5);
-
-    for(int i=0; i<5; i++)
-        printf("%d ",arr[i]);
+    int a=5,b=10;
+    printf("A = %d, B = %d\n",a,b);
+    swap(&a,&b);
+    printf("A = %d, B = %d\n",a,b);
 
     return 0;
 }
